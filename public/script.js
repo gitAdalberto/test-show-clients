@@ -4,7 +4,14 @@ fetch("/clientes")
     const tbody = document.querySelector("#clientes tbody");
     clientes.forEach(c => {
         const row = document.createElement("tr");
-        row.innerHTML = `<td>${c.ClienteID}</td><td>${c.NombreCliente}</td>`;
+        row.innerHTML = 
+        `
+        <td>${c.ClienteID}</td>
+        <td>${c.NombreCliente}</td>
+        <td>${c.CorreoCliente}</td>
+        <td>${c.TelefonoCliente}</td>
+        `
+        ;
         tbody.appendChild(row);
         
     });
