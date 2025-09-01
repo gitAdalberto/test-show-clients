@@ -21,7 +21,7 @@ app.get("/",async (req,res) => {
 
 app.get("/show", async (req,res) => {
     try {
-        const result = await pool.query('SELECT * FROM tbClientes;');
+        const [result] = await pool.query('SELECT * FROM tbClientes;');
         console.log(result);
         res.json({ success: true, message: "Datos obtenidos exitosamente!", result: result});
     } catch (error) {
