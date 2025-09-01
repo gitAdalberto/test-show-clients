@@ -27,11 +27,11 @@ app.get("/",async (req,res) => {
     res.send("Servidor funcionando!");
 })
 
-app.get("/show", async (req,res) => {
+app.get("/clientes", async (req,res) => {
     try {
         const [result] = await pool.query('SELECT * FROM tbClientes;');
         console.log(result);
-        res.json({ success: true, message: "Datos obtenidos exitosamente!", result: result});
+        res.json(result);
     } catch (error) {
         console.log(error);
         res.status(500).json({ success: false, message: error.message })
